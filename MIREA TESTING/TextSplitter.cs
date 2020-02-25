@@ -7,7 +7,7 @@ namespace Mirea
 {
     class TextSplitter
     {
-        private static readonly IList<String> DEFAULT_SEPARATORS = new List<String>() {"[ ]+", ";"};
+        private static readonly IList<String> DefaultSeparators = new List<String>() {"[ ;]+"};
         private readonly IList<Regex> _separators;
 
         TextSplitter(IList<String> separators)
@@ -17,10 +17,12 @@ namespace Mirea
                 .ToList();
         }
 
-        public static TextSplitter Default => new TextSplitter(DEFAULT_SEPARATORS);
+        public static TextSplitter Default => new TextSplitter(DefaultSeparators);
 
         public IList<String> Split(String text) => _separators.Aggregate(new List<String>() {text}, (acc, cur) =>
-            acc.SelectMany((subText) => cur.Split(subText)).ToList()
+            acc.SelectMany((subText) => cur.Split(subText))
+                .Where((word) => word.Length != 0)
+                .ToList()
         );
     }
 }

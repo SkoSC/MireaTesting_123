@@ -27,7 +27,7 @@ namespace MIREA_TESTING
         {
             InitializeComponent();
 
-            InputBox.TextChanged += (_, args) =>
+            InputBox.TextChanged += (sender, args) =>
             {
                 OutputBox.ItemsSource = _interactor.Apply(InputBox.Text);
             };
