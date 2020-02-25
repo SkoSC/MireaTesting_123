@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace Mirea
 {
-    class TextSplitter
+    public class TextSplitter
     {
         private static readonly IList<String> DefaultSeparators = new List<String>() {"[ ;]+"};
         private readonly IList<Regex> _separators;
