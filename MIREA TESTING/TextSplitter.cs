@@ -7,7 +7,7 @@ namespace Mirea
 {
     public class TextSplitter
     {
-        private static readonly IList<String> DefaultSeparators = new List<String>() {"[ ;]+"};
+        private static readonly IList<String> DefaultSeparators = new List<String>() {"[ ,]+"};
         private readonly IList<Regex> _separators;
 
         TextSplitter(IList<String> separators)

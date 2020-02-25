@@ -12,9 +12,9 @@ namespace Test
 
         [TestCase("hello world", new String[] {"hello", "world"})]
         [TestCase("hello        world", new String[] { "hello", "world" })]
-        [TestCase("hello world;!", new String[] { "hello", "world", "!" })]
+        [TestCase("hello world,!", new String[] { "hello", "world", "!" })]
         [TestCase("", new String[] { })]
-        [TestCase("    ;;   ", new String[] { })]
+        [TestCase("    ,,   ", new String[] { })]
         public void DefaultImplementation(String input, String[] output)
         {
             Assert.AreEqual(output, _splitter.Split(input));

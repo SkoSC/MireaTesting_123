@@ -7,7 +7,7 @@ namespace Mirea
 {
     public class PrimaryTaskInteractor
     {
-        private Transformer<String, String> transformer = TransformerUtils.Chain<String>(
+        private readonly Transformer<String, String> transformer = TransformerUtils.Chain<String>(
             new MoveLastLetterToBeginning().Apply,
             new RemoveRepeatingLetters().Apply
         );
