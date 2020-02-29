@@ -28,6 +28,7 @@ namespace Test
 
         [TestCase("hello world,!", new String[] { "hello", "world", "!" })]
         [TestCase("    ,,   ", new String[] { })]
+        [TestCase(",, ,,hello , world,, ,,", new String[] { "hello", "world" })]
         public void DefaultImplementationMixed(String input, String[] output)
         {
             DefaultImplementation(input, output);
